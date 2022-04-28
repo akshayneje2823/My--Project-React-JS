@@ -17,7 +17,7 @@ function Project(props) {
         setwords(words3)
     }
     let onchageHdndler = (event) => {
-        setwords(event.target.value)
+        setwords(event.target.value)   /*You will get automatically event  on onchange eventlistning*/
     }
     let [myStyle, setMyStyle] = useState({
         color: "black",
