@@ -13,7 +13,7 @@ function Project(props) {
         setwords(words2)
     }
     let clearHandler = () => {
-        let words3 = " "
+        let words3 = ""
         setwords(words3)
     }
     let onchageHdndler = (event) => {
@@ -26,19 +26,20 @@ function Project(props) {
     let [darkbtn, setDarkBtn] = useState("Enable Dark Mode")
 
     let modeHandler = () => {
-        if (myStyle.color === "white") {
-            setMyStyle({
-                color: "black",
-                backgroundColor: "white",
-                border:"5px solid white"
-            })
-            setDarkBtn("Enable Dark Mode")
-        } else {
+        if (myStyle.color === "black") {
             setMyStyle({
                 color: "white",
-                backgroundColor: "black"
+                backgroundColor: "black",
+                border:"1px solid white"
             })
-        } setDarkBtn("Enable Light Mode")
+            setDarkBtn("dark")
+        }
+        else {
+            setMyStyle({
+                color: "black",
+                backgroundColor: "white"
+            })
+        } setDarkBtn("light");
     }
     return (
         <React.Fragment>
@@ -56,8 +57,8 @@ function Project(props) {
                     <h3>Your text summary</h3>
                     <p>{words.split(" ").length} words and {words.length} characters.</p>
                 </div>
-                <div className="container">
-                    <buttton className="btn btn-primary btn-sm mx-2" onClick={modeHandler}>{darkbtn}</buttton>
+                <div className="container mx-2 my-1">
+                    <buttton className="btn btn-primary btn-sm mx-2 my-1" onClick={modeHandler}>{darkbtn}</buttton>
                 </div>
             </div>
 
